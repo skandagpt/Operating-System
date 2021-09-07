@@ -1,16 +1,15 @@
 # Advanced Operating System
-- [Advanced Operating System](#advanced-operating-system)
-  - [Server-Client Model](#server-client-model)
-    - [Classes](#classes)
-      - [Controller](#controller)
-      - [Server](#server)
-      - [Client](#client)
-    - [How to run](#how-to-run)
-    - [Commands](#commands)
-      - [Create Chatroom](#create-chatroom)
-      - [Join Chatroom](#join-chatroom)
-      - [List all members](#list-all-members)
-      - [Leave the chatroom](#leave-the-chatroom)
+ - [Server-Client Model](#server-client-model)
+   - [Classes](#classes)
+     - [Controller](#controller)
+     - [Server](#server)
+     - [Client](#client)
+   - [How to run](#how-to-run)
+   - [Commands](#commands)
+     - [Create Chatroom](#create-chatroom)
+     - [Join Chatroom](#join-chatroom)
+     - [List all members](#list-all-members)
+       [Leave the chatroom](#leave-the-chatroom)
 
 ## Server-Client Model
 Server-Client application using socket programming
