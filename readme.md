@@ -1,6 +1,6 @@
 # Advanced Operating System
  - [Server-Client Model](#server-client-model)
-   - [Classes](#classes)
+   - [Chatroom](#chatroom)
      - [Controller](#controller)
      - [Server](#server)
      - [Client](#client)
@@ -13,7 +13,7 @@
 
 ## Server-Client Model
 Server-Client application using socket programming
-### Classes
+### Chatroom
 Clients can create different chatrooms and chat among themselves
 #### Controller
 Used to create and join chatrooms
