@@ -13,6 +13,7 @@ class Client:
     def __init__(self,host,port):
         self.host = host
         self.port= port
+        self.flag=0
     
     def createSocket(self,port):
         client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -37,10 +38,13 @@ class Client:
     def send(self,client):
         while True:
             message = input("")
+            self.flag+=1
             if(message=="./leave"):
                 break
             client.send(self.encode(message))
+
         client.send(self.encode(message))
+        self.flag+=1
         client.close()
         exit(0)
 

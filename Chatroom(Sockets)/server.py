@@ -11,6 +11,7 @@ class Server:
         self.port= port
         self.connection = []
         self.members = []
+        self.flags=[]
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
     def configure(self):
@@ -35,11 +36,11 @@ class Server:
 
     def threaded(self, client, client_addr,client_name):
         intial_message = "{} joined the chatroom".format(client_name)
+        self.flags.append(0)
         self.broadcast(client, intial_message)
         while True:
             try:
                 data = client.recv(1024)
-                
                 if not data or str(self.decode(data))=="./leave":
                     self.broadcast(client, "{} left the chatroom".format(client_name))
                     self.members.remove(client_name)
@@ -69,7 +70,9 @@ class Server:
                 #         continue
 
                 message = "{} : {}".format(client_name, data)
+                self.flags[self.members.index(client_name)]+=1
                 self.broadcast(client, message)
+                print(self.flags)
             except  Exception as e:
                 print(e)
                 break

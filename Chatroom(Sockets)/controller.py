@@ -1,5 +1,5 @@
 import socket
-from server_class import Server
+from server import Server
 import _thread
 import threading
 import json
