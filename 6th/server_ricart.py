@@ -78,5 +78,6 @@ class Server:
                 self.threaded, (client,client_addr ,client_name.decode('ascii')))
 
 if __name__ == '__main__':
-    server=Server(1235);
+    server=Server(1236);
     server.start()
+print(e)
