@@ -8,14 +8,19 @@ print('Socket Created Successfully')
 print('-----------------------------------')
 my_socket.connect((Host, port))
 print('Socket binded Successfully to port ',port)
-my_socket.send('Connected'.encode())
-print(my_socket.recv(1024).decode())
+# my_socket.send('Connected'.encode())
+# print(my_socket.recv(1024).decode())
 
+txt = my_socket.recv(1024).decode()
+print('Server :',txt)
+data = input('Client : ')
+my_socket.send(data.encode())
+file = open('abc.txt', 'w')
 while True:
-    
-    txt = my_socket.recv(1024).decode()
-    print('Server :',txt)
-    data = input('Client : ')
-    my_socket.send(data.encode())
-    if data == 'close()':
+    lines = my_socket.recv(1024).decode()  
+    file.writelines(lines)
+    print(lines)
+    if lines == '':
         break
+file.close()
+my_socket.close()
